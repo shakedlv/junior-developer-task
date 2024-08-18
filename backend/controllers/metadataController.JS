@@ -1,7 +1,7 @@
-import axios from 'axios';
-import cheerio from 'cheerio';
+const axios = require('axios');
+const cheerio = require('cheerio');
 
-export const fetchMetadata = async (url) => {
+const fetchMetadata = async (url) => {
     try {
         const { data } = await axios.get(url);
         const $ = cheerio.load(data);
@@ -14,3 +14,5 @@ export const fetchMetadata = async (url) => {
         return { error: 'Failed to fetch metadata' };
     }
 };
+
+module.exports = { fetchMetadata };
