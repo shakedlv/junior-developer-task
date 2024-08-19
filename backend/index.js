@@ -11,15 +11,10 @@ const { limiter } = require('./middleware/rateLimit');
 const app = express();
 
 app.use(cookieParser());
-
 app.use(cors({ origin: true }));
 app.use(helmet());
-
-
 app.use(morgan('dev'));
 app.use(express.json());
-
-
 app.use(limiter)
 
 app.use('/', metadataRoutes);

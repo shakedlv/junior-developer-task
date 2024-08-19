@@ -1,18 +1,78 @@
 
-1. Additional Requirements:
-Security: Ensure that the application is secure against common web vulnerabilities (e.g., , CSRF).
-Documentation: Provide clear and concise documentation on how to set up, run, and test the application. Explain your design choices and any trade-offs you made.
-Testing: Write unit tests for both the front-end and back-end. Include at least 5 test cases.
+# Junior Developer Home Task
 
-Submission Instructions:
-Submit your code in a GitHub repository.
-Include a README.md with instructions on how to set up and run your application.
-Provide a link to a live demo of your application (e.g., deployed on Heroku, Vercel).
-When you’re done, please send your project, along with your CV, to lital@hh-unicorn.com.
+### Objective:
+The goal of this task is to assess your problem-solving skills, creativity, and understanding of key web development concepts. The task involves both front-end (React) and back-end (Node.js) components.
 
-Time Limit:
-You have 48 hours from the time you start the exam to submit your solution
+### Task Overview:
+You are required to build a simple full-stack application. The application should allow users to input a list of URLs, fetch metadata (title, description, and an image) for each URL, and display the results on the front-end.
 
+
+## Installation and Usage
+
+clone github repo
+```bash
+git clone shakedlv/junior-developer-task
+```
+
+### Frontend
+cd to frontend folder
+```bash
+  cd frontend
+```
+
+Install dependencies with npm
+
+```bash
+  npm i
+```
+
+Run the client
+
+```bash
+  npm start
+```
+
+### Backend
+cd to backend folder
+```bash
+  cd backend
+```
+
+Install dependencies with npm
+
+```bash
+  npm i
+```
+
+Run the server
+
+```bash
+  npm start
+```
+    
+## Features
+
+#### Fetching website metadata: 
+Provides api endpoint and a client web application to fetch metadata from website using proivided url.
+#### Data Validation: 
+Implements validation rules to ensure url is valid.
+
+
+
+## Technologies Used
+### Backend
+- Node Js with express
+- [helmet](https://www.npmjs.com/package/helmet) - for better server security
+- [cheerio](https://cheerio.js.org/) - easy to use html parser
+### Frontend
+- React 
+- [Axios](https://www.npmjs.com/package/axios) - api fetch
+
+## Design  Choises
+### Axios vs Fetch
+Axios provide a simpler way for fetching data from an api,
+In my opinion axios uses a cleaner code snippet, that cen be reused in a larger scale project 
 ## Testing - Jest
 Jest is a JavaScript testing framework simple and easy to use.
 
@@ -22,3 +82,13 @@ To run test:
 ```bash
   npm test
 ```
+
+### Backend 
+
+To run test:
+```bash
+  npm test
+```
+## To Do
+- Security: Ensure that the application is secure against common web vulnerabilities (CSRF).
+- Disable Submit button until 3 urls are valid
