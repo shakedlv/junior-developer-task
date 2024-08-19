@@ -1,8 +1,6 @@
-Requirements:
-
 
 1. Additional Requirements:
-Security: Ensure that the application is secure against common web vulnerabilities (e.g., XSS, CSRF).
+Security: Ensure that the application is secure against common web vulnerabilities (e.g., , CSRF).
 Documentation: Provide clear and concise documentation on how to set up, run, and test the application. Explain your design choices and any trade-offs you made.
 Testing: Write unit tests for both the front-end and back-end. Include at least 5 test cases.
 

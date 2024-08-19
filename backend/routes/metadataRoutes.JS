@@ -1,5 +1,6 @@
 const express = require('express');
 const { fetchMetadata } = require('../controllers/metadataController.JS');
+
 const router = express.Router();
 
 router.post('/fetch-metadata', async (req, res) => {
