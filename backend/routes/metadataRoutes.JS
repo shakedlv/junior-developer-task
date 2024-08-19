@@ -4,6 +4,8 @@ const { fetchMetadata } = require('../controllers/metadataController.JS');
 const router = express.Router();
 
 router.post('/api/fetch-metadata', async (req, res) => {
+    res.setHeader('Access-Control-Allow-Credentials', true)
+    res.setHeader('Access-Control-Allow-Origin', '*')
     const { urls } = req.body;
     const metadataList = await Promise.all(urls.map(url => fetchMetadata(url)));
     res.json(metadataList);
