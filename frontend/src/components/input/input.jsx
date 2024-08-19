@@ -7,13 +7,14 @@ function Input({ index, url, onHandleChange, onHandleChangeEnd }) {
     const [error, setError] = useState(null)
 
     const handleChange = (index, value) => {
-        if(isValidHttpUrl(value) || value.length == 0)
-        {
+        if (isValidHttpUrl(value)) {
             setError(null)
+
+
         }
-        else
-        {
+        else {
             setError("Url is invalid! url must contain http / https and hostname (eg https://www.google.com)  ")
+
         }
         onHandleChange(index, value);
     }
@@ -22,12 +23,9 @@ function Input({ index, url, onHandleChange, onHandleChangeEnd }) {
     }
 
     function isValidHttpUrl(string) {
-        try {
-            const newUrl = new URL(string);
-            return newUrl.protocol === 'http:' || newUrl.protocol === 'https:';
-        } catch (err) {
-            return false;
-        }
+        const urlPattern = /^(https?:\/\/)(www\.)[a-zA-Z0-9-]+\.[a-z]{2,}([\/?].+)?$/;
+        console.log(urlPattern.test(string))
+        return urlPattern.test(string);
     }
 
 

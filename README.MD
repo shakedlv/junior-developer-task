@@ -1,7 +1,5 @@
 Requirements:
 
-1. Front-End (React):
-Improve url validation 
 
 1. Additional Requirements:
 Security: Ensure that the application is secure against common web vulnerabilities (e.g., XSS, CSRF).
