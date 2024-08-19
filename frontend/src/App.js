@@ -5,6 +5,7 @@ import ErrorDisplay from './components/error/error';
 import Input from './components/input/input';
 import DataCarousel from './components/data-carousel/data-carousel';
 import Spinner from './components/spinner/spinner';
+import isValidHttpUrl from './components/input/urlValidation';
 
 function App() {
   const [urls, setUrls] = useState(['', '', '']);
@@ -47,6 +48,14 @@ function App() {
     }
 
   };
+  const areAllValidUrls = () => {
+    for (let i = 0; i < 3; i++) {
+      if (!isValidHttpUrl(urls[i])) {
+        return false;
+      }
+    }
+    return true;
+  };
 
   return (
     <div className="App">
@@ -54,11 +63,11 @@ function App() {
         {urls.map((url, index) => (
           <Input key={index} index={index} url={url} onHandleChange={handleChange} onHandleChangeEnd={handleChangeEnd} />
         ))}
-        <button type="submit">Submit</button>
+        <button type="submit" disabled={!areAllValidUrls()}>{areAllValidUrls() ? "Fetch Website metadata" : "Minimum of 3 website is required!"}</button>
       </form>
       <ErrorDisplay error={error} />
       {
-        loading ? <Spinner/> :
+        loading ? <Spinner /> :
           <DataCarousel items={metadata} />
       }
 
