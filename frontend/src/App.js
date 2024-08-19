@@ -38,7 +38,12 @@ function App() {
     try {
       const response = await axios.post(
         'https://junior-developer-task-server.vercel.app/api/fetch-metadata',
-        { urls });
+        { urls }, {
+          headers: {
+            'Access-Control-Allow-Origin': 'https://junior-developer-task-client.vercel.app/',
+            'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+          }
+      });
       console.log(response.data);
       setMetadata(response.data);
       setLoading(false)

@@ -11,12 +11,8 @@ const { limiter } = require('./middleware/rateLimit');
 const app = express();
 
 app.use(cookieParser());
-app.use(cors({
-	origin: 'https://junior-developer-task-client.vercel.app/',
-	methods: ['GET'],
-	allowedHeaders: ['Content-Type', 'Authorization'],
-	maxAge: 600
-}));
+app.use(cors({ credentials: true, origin: 'https://junior-developer-task-client.vercel.app/' }));
+
 app.use(helmet());
 app.use(morgan('dev'));
 app.use(express.json());
