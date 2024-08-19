@@ -37,7 +37,7 @@ function App() {
     setLoading(true)
     try {
       const response = await axios.post(
-        'http://localhost:5000/fetch-metadata',
+        'https://junior-developer-task-yieo.vercel.app/api/fetch-metadata',
         { urls });
       console.log(response.data);
       setMetadata(response.data);
