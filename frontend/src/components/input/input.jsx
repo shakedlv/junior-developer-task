@@ -1,16 +1,13 @@
 import React, { useState } from 'react'
 import './input.css'
 import ErrorDisplay from '../error/error';
-import validator from 'validator'
-
+import isValidHttpUrl from './urlValidation'
 function Input({ index, url, onHandleChange, onHandleChangeEnd }) {
     const [error, setError] = useState(null)
 
     const handleChange = (index, value) => {
         if (isValidHttpUrl(value)) {
             setError(null)
-
-
         }
         else {
             setError("Url is invalid! url must contain http / https and hostname (eg https://www.google.com)  ")
@@ -22,16 +19,10 @@ function Input({ index, url, onHandleChange, onHandleChangeEnd }) {
         onHandleChangeEnd(index, value);
     }
 
-    function isValidHttpUrl(string) {
-        const urlPattern = /^(https?:\/\/)(www\.)[a-zA-Z0-9-]+\.[a-z]{2,}([\/?].+)?$/;
-        console.log(urlPattern.test(string))
-        return urlPattern.test(string);
-    }
-
-
     return (
         <>
             <input
+                data-testid={'input-1'}
                 className={error ? "error" : ""}
                 key={index}
                 type="text"
@@ -45,4 +36,4 @@ function Input({ index, url, onHandleChange, onHandleChangeEnd }) {
     )
 }
 
-export default Input
+export default Input 

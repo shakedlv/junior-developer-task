@@ -12,3 +12,8 @@ When you’re done, please send your project, along with your CV, to lital@hh-un
 
 Time Limit:
 You have 48 hours from the time you start the exam to submit your solution
+
+## Testing
+### Frontend - Jest
+Jest is a JavaScript testing framework simple and easy to use,
+ 
