@@ -19,6 +19,7 @@ app.use(express.json());
 app.use(limiter)
 
 app.use('/', metadataRoutes);
+app.get("/", (req, res) => res.send("Express on Vercel"));
 
 app.listen(5000, () => {
 	console.log('Server is running on port 5000');
