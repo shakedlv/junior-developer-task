@@ -9,26 +9,10 @@ form {
   flex-direction: column;
 }
 
-input {
-  margin-bottom: 10px;
-  padding: 8px;
-  font-size: 16px;
-}
+
 
 button {
   padding: 10px;
   font-size: 16px;
 }
 
-.metadata-list {
-  margin-top: 20px;
-}
-
-.metadata-item {
-  margin-bottom: 20px;
-}
-
-.metadata-item img {
-  max-width: 100%;
-  height: auto;
-}

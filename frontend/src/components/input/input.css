@@ -1,0 +1,9 @@
+input {
+    padding: 8px;
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.error{
+    border: 1px solid #fcc2c3;
+}
