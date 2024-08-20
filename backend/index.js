@@ -11,7 +11,7 @@ const { limiter } = require('./middleware/rateLimit');
 const app = express();
 
 app.use(cookieParser());
-app.use(cors({ credentials: true, origin: 'https://junior-developer-task-client.vercel.app/' }));
+app.use(cors({ credentials: true, origin: '*' }));
 
 app.use(helmet());
 app.use(morgan('dev'));
@@ -21,6 +21,6 @@ app.use(limiter)
 app.use('/api', metadataRoutes);
 app.get("/api", (req, res) => res.send("Express on Vercel"));
 
-app.listen(3000, () => {
+app.listen(5000, () => {
 	console.log('Server is running on port 5000');
 });
