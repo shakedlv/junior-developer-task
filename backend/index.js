@@ -4,7 +4,7 @@ const cors = require('cors');
 
 const helmet = require('helmet');
 const cookieParser = require('cookie-parser');
-const metadataRoutes = require('./routes/metadataRoutes');
+const metadataRoutes = require('./api/metadataRoutes');
 
 const { limiter } = require('./middleware/rateLimit');
 
